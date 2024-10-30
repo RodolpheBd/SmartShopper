@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_shopper/src/common/common.dart';
+import 'package:smart_shopper/src/widgets/navigation/header_nav_bar.dart';
 import 'package:smart_shopper/src/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: CustomAppBar(),
+      appBar: const HeaderNavBar(
+        showBackArrow: true,
+        showProfile: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
