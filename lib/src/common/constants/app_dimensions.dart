@@ -32,5 +32,7 @@ class AppDimensions {
 
   // Border dimensions
   static const double borderRadius = 12.0;
-  static const double borderWidth = 0.5;
+
+  static const double borderSmallWidth = 0.5;
+  static const double borderLargeWidth = 2.0;
 }

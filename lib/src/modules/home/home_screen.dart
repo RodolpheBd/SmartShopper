@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'dart:io';
 import 'package:smart_shopper/src/common/common.dart';
-import 'package:smart_shopper/src/widgets/navigation/header_nav_bar.dart';
 import 'package:smart_shopper/src/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,34 +15,35 @@ class HomeScreen extends StatelessWidget {
         showProfile: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: AppDimensions.gapLarge),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 16),
-            SvgPicture.asset(AppIcons.basket),
             const Text(
-              'Votre assistant de courses personnel, à portée de main !',
-              style: Textstyles.header,
+              "Votre assistant de courses personnel, à portée de main !",
+              style: Textstyles.bodyBold,
             ),
-            const SizedBox(height: 24),
             Center(
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                label: const Text('Faire une liste'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorStyles.primaryColor,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              child: Column(
+                children: [
+                  CustomButton(
+                    text: "Faire une liste",
+                    backgroundColor: ColorStyles.backgroundColor,
+                    textColor: ColorStyles.primaryColor,
+                    borderColor: true,
+                    icon: AppIcons.generate,
+                    onPressed: () {
+                      // Action à effectuer lors de l'appui sur le bouton
+                    },
                   ),
-                  textStyle: Textstyles.bodyMedium,
-                ),
+                  const Cards(
+                      imagePath: "lib/src/common/assets/images/test.png",
+                      text: "text",
+                      height: 150,
+                      width: 100),
+                ],
               ),
             ),
-            const SizedBox(height: 24),
-            //SearchField(),
           ],
         ),
       ),

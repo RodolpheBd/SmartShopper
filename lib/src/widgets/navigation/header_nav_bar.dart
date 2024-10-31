@@ -18,26 +18,30 @@ class HeaderNavBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: AppDimensions.widgetWidth, //
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          if (showBackArrow)
-            CircleAvatar(
-              child: IconButton(
-                icon: SvgPicture.asset(AppIcons.backArrow),
-                onPressed: onBackArrowPressed,
-              ),
-            ),
-          if (showProfile)
-            CircleAvatar(
-              child: IconButton(
-                icon: SvgPicture.asset(AppIcons.user),
-                onPressed: onProfilePressed,
-              ),
-            ),
-        ],
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: AppDimensions.gapLarge),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            showBackArrow
+                ? CircleAvatar(
+                    child: IconButton(
+                      icon: SvgPicture.asset(AppIcons.backArrow),
+                      onPressed: onBackArrowPressed,
+                    ),
+                  )
+                : Container(),
+            showProfile
+                ? CircleAvatar(
+                    child: IconButton(
+                      icon: SvgPicture.asset(AppIcons.user),
+                      onPressed: onProfilePressed,
+                    ),
+                  )
+                : Container(),
+          ],
+        ),
       ),
     );
   }
