@@ -9,8 +9,18 @@ class AppDimensions {
   static const double gapLarge = 32.0;
   static const double gapExtraLarge = 64.0;
 
+  // Border dimensions
+  static const double borderRadius = 12.0;
+
+  static const double borderSmallWidth = 0.5;
+  static const double borderLargeWidth = 2.0;
+
   // Widgets dimensions
   static const double widgetWidth = 330.0;
+
+  // Button dimensions
+  static const double buttonHeight = 48.0;
+  static const double buttonWidth = widgetWidth;
 
   // Card dimensions
   static const double cardSmallHeight = 175.0;
@@ -26,13 +36,6 @@ class AppDimensions {
   static const double iconSmall = 16.0;
   static const double iconMedium = 24.0;
 
-  // Button dimensions
-  static const double buttonHeight = 48.0;
-  static const double buttonWidth = widgetWidth;
-
-  // Border dimensions
-  static const double borderRadius = 12.0;
-
-  static const double borderSmallWidth = 0.5;
-  static const double borderLargeWidth = 2.0;
+  // Image sizes
+  static const double imageSmall = 100.0;
 }

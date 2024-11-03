@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'dart:io';
 import 'package:smart_shopper/src/common/common.dart';
 import 'package:smart_shopper/src/widgets/widgets.dart';
 
@@ -37,17 +35,19 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                   const Cards(
-                      imagePath: "lib/src/common/assets/images/test.png",
-                      text: "text",
-                      height: 150,
-                      width: 100),
+                    imagePath: "lib/src/common/assets/images/test.png",
+                    text: "Fruits",
+                    height: 200,
+                    width: 300,
+                    backgroundColor: ColorStyles.backgroundColor,
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
-      //bottomNavigationBar: CustomBottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

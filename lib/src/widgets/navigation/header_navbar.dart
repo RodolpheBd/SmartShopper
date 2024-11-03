@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_shopper/src/common/common.dart';
+import 'package:smart_shopper/src/common/utils/navigation_utils.dart';
+import 'package:smart_shopper/src/modules/modules.dart'; // Assurez-vous que les imports sont corrects
 
 class HeaderNavBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showBackArrow;
   final bool showProfile;
-  final VoidCallback? onBackArrowPressed;
-  final VoidCallback? onProfilePressed;
+  final String? backRoute;
+  final String? profileRoute;
 
   const HeaderNavBar({
     super.key,
     this.showBackArrow = false,
     this.showProfile = false,
-    this.onBackArrowPressed,
-    this.onProfilePressed,
+    this.backRoute,
+    this.profileRoute,
   });
 
   @override
@@ -28,18 +29,28 @@ class HeaderNavBar extends StatelessWidget implements PreferredSizeWidget {
                 ? CircleAvatar(
                     child: IconButton(
                       icon: SvgPicture.asset(AppIcons.backArrow),
-                      onPressed: onBackArrowPressed,
+                      onPressed: () {
+                        if (backRoute != null) {
+                          navigateTo(context, backRoute!);
+                        } else {
+                          Navigator.pop(context);
+                        }
+                      },
                     ),
                   )
-                : Container(),
+                : const SizedBox(),
             showProfile
                 ? CircleAvatar(
                     child: IconButton(
                       icon: SvgPicture.asset(AppIcons.user),
-                      onPressed: onProfilePressed,
+                      onPressed: () {
+                        if (profileRoute != null) {
+                          navigateTo(context, profileRoute!);
+                        }
+                      },
                     ),
                   )
-                : Container(),
+                : const SizedBox(),
           ],
         ),
       ),

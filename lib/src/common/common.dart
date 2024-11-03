@@ -9,3 +9,4 @@ export 'package:smart_shopper/src/common/constants/app_dimensions.dart';
 
 // Icons
 export 'package:smart_shopper/src/common/constants/app_icons.dart';
+export 'package:flutter_svg/flutter_svg.dart';

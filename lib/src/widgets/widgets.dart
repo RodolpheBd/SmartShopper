@@ -1,6 +1,6 @@
 // Navigation
-export 'package:smart_shopper/src/widgets/navigation/header_nav_bar.dart';
-// export 'package:smart_shopper/src/widgets/navigation/bottom_nav_bar.dart';
+export 'package:smart_shopper/src/widgets/navigation/header_navbar.dart';
+export 'package:smart_shopper/src/widgets/navigation/bottom_navbar.dart';
 
 // Buttons
 export 'package:smart_shopper/src/widgets/buttons/buttons.dart';

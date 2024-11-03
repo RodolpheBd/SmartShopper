@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:smart_shopper/src/common/common.dart';
 
 class CustomButton extends StatelessWidget {
-  final String text;
-  final Color? backgroundColor;
-  final Color textColor;
-  final bool? borderColor;
   final String? icon;
+  final String text;
+  final Color textColor;
+  final Color? backgroundColor;
+  final bool? borderColor;
   final VoidCallback onPressed;
 
   const CustomButton({
