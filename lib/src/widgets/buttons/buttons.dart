@@ -22,16 +22,11 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: backgroundColor != null || borderColor == true
-          ? AppDimensions.buttonHeight
-          : null,
-      width: backgroundColor != null || borderColor == true
-          ? double.infinity
-          : null,
+      height: AppDimensions.buttonHeight,
+      width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shadowColor: Colors.transparent,
-          elevation: 0,
           backgroundColor: backgroundColor ?? Colors.transparent,
           side: borderColor == true
               ? BorderSide(

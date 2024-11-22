@@ -21,39 +21,39 @@ class HeaderNavBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppDimensions.gapLarge),
+        padding: const EdgeInsets.only(top: 30),
+        // child: Padding(
+        //   padding:
+        //       const EdgeInsets.symmetric(horizontal: AppDimensions.gapLarge),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             showBackArrow
-                ? CircleAvatar(
-                    child: IconButton(
-                      icon: SvgPicture.asset(AppIcons.backArrow),
-                      onPressed: () {
-                        if (backRoute != null) {
-                          navigateTo(context, backRoute!);
-                        } else {
-                          Navigator.pop(context);
-                        }
-                      },
-                    ),
+                ? IconButton(
+                    icon: SvgPicture.asset(AppIcons.backArrow),
+                    onPressed: () {
+                      if (backRoute != null) {
+                        navigateTo(context, backRoute!);
+                      } else {
+                        Navigator.pop(context);
+                      }
+                    },
                   )
                 : const SizedBox(),
             showProfile
-                ? CircleAvatar(
-                    child: IconButton(
-                      icon: SvgPicture.asset(AppIcons.user),
-                      onPressed: () {
-                        if (profileRoute != null) {
-                          navigateTo(context, profileRoute!);
-                        }
-                      },
-                    ),
+                ? IconButton(
+                    icon: SvgPicture.asset(AppIcons.user),
+                    onPressed: () {
+                      if (profileRoute != null) {
+                        navigateTo(context, profileRoute!);
+                      }
+                    },
                   )
                 : const SizedBox(),
           ],
         ),
       ),
+      // ),
     );
   }
 

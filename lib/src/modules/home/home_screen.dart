@@ -9,7 +9,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HeaderNavBar(
-        showBackArrow: true,
         showProfile: true,
       ),
       body: Padding(
